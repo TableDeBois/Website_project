@@ -6,4 +6,4 @@ module.exports = function(router){
     //On cree une route vers l'index
 
     router.get('/',controller.index);
-};
+};  
