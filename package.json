@@ -1,0 +1,10 @@
+{
+    "name": "Efrei_Website",
+    "version": "1.0.0",
+    "description": "Projet de site internet",
+    "author": "Victor BULTEZ",
+    "dependencies": {
+        "express": "4.*",
+        "jade": "^0.29.0"
+    }
+}
