@@ -1,5 +1,5 @@
 //server.js 
-var app = require('./bin.express')();
+var app = require('./bin/express')();
 var router = require('./bin/express-router')();
 
 require('./src/routers/default')(router);
