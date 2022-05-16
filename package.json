@@ -4,7 +4,8 @@
     "description": "Projet de site internet",
     "author": "Victor BULTEZ",
     "dependencies": {
-        "express": "4.*",
-        "jade": "^0.29.0"
+        "express": "^4.18.1",
+        "jade": "^0.29.0",
+        "server": "^0.0.3"
     }
 }
