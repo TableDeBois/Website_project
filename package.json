@@ -1,11 +1,31 @@
 {
-    "name": "Efrei_Website",
+    "name": "website-efrei",
     "version": "1.0.0",
-    "description": "Projet de site internet",
-    "author": "Victor BULTEZ",
+    "description": "Worderful website to sell services",
+    "author": "TableDeBois",
+    "license": "MIT",
+    "scripts": {
+        "start": "node server",
+        "watch": "nodemon server.js"
+    },
     "dependencies": {
         "express": "^4.18.1",
         "jade": "^0.29.0",
-        "server": "^0.0.3"
+        "server": "^0.0.3",
+        "bcrypt": "^5.0.0",
+        "body-parser": "^1.19.0",
+        "common-tags": "^1.8.0",
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "dotenv": "^8.2.0",
+        "express-session": "^1.17.1",
+        "morgan": "~1.9.1",
+        "multer": "^1.4.2",
+        "path": "^0.12.7",
+        "sqlite": "^4.0.18",
+        "sqlite3": "^5.0.0"
+    },
+    "devDependencies": {
+        "nodemon" : "^2.0.6"
     }
 }
