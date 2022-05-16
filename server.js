@@ -15,12 +15,6 @@ const routes = require('./src/routers/index');
 
 app.use('/',routes);
 
-/**
-app.get('/', (req, res, next) => {
-    res.send(`<h1>Hello world from server</h1>
-      <p>From edupala learning express routing</p>
-    `);
-  });*/
 
 const port = normalizePort(process.env.port || '3000');
 app.set('port',port);
