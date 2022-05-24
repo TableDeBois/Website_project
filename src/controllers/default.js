@@ -4,9 +4,11 @@ module.exports.index = function(req,res){
     res.render('index');
 };
 
-module.exports.page1 = function(req,res){
-    res.render('page1');
+module.exports.login = function(req,res){
+    res.render('login');
 };
+
+
 
 /**
 module.exports.google = function(req,res){

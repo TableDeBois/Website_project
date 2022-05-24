@@ -9,8 +9,10 @@ var router = require('./../../bin/express-router')();
 //var router = express.Router();
 
 router.get('/',controller.index);
+router.get('/home',controller.index);
 
-router.get('/page1',controller.page1);
+
+router.get('/login',controller.login);
 
 module.exports=router;
 
