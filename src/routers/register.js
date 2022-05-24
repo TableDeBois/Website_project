@@ -13,3 +13,5 @@ routeur.post('/', function(req,res,next){
 
 
 });
+
+module.exports=routeur;

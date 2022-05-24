@@ -11,7 +11,7 @@ var router = require('./../../bin/express-router')();
 router.get('/',controller.index);
 router.get('/home',controller.index);
 
-
+router.get('/register',controller.register);
 router.get('/login',controller.login);
 
 module.exports=router;

@@ -1,4 +1,3 @@
-//public/views/login.jade
 extends layout 
 block body
     section.container
@@ -17,7 +16,10 @@ block body
             h1 Bienvenue 
             p.lead Connectez vous :
             p 
-                form(name="login-form", method="post")
+                form(name="register-form", method="post")
+                    div.input
+                        span.label Email 
+                        input(type='email', name='username')
                     div.input
                         span.label Username 
                         input(type='text', name='username')
@@ -25,7 +27,7 @@ block body
                         span.label Password 
                         input(type='password', name='password')
                     .actions 
-                        input(type="submit", value="login")
+                        input(type="submit", value="register")
 
         footer.footer 
             p © NoIndustry 2022

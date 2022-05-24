@@ -3,6 +3,7 @@ const router = require('./default');
 const homeRouteur = require('./home');
 const adminRouter = require('./admin');
 const loginRouter = require('./login');
+const registerRouter = require('./register');
 
 /**
  * ????????
@@ -20,7 +21,7 @@ router.get('/',getHomePage);
 router.get('/home',getHomePage);
 
 router.use('/login',loginRouter);
-//router.use('/register',/**registerRouter */);
+router.use('/register',registerRouter);
 //router.use('/gestion',adminRouter);
 
 
