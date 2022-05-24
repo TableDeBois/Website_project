@@ -12,9 +12,9 @@ const getHomePage = function(req,res,next){
 
 router.get('/',getHomePage);
 router.get('/home',getHomePage);
-router.use('/register',/**registerRouter */);
-router.use('/login',/**login */);
-router.use('/gestion',adminRouter);
+//router.use('/register',/**registerRouter */);
+//router.use('/login',/**login */);
+//router.use('/gestion',adminRouter);
 
 
 module.exports = router;

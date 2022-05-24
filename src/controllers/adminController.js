@@ -1,4 +1,4 @@
-const db = require('../db/database');
+const db = require('../db/db');
 const Admin = require('../db/model/Admin');
 
 async function checkId(id){

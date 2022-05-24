@@ -1,4 +1,4 @@
-const express = require =('express');
+const express = require('express');
 const routeur = express.Router();
 const adminController = require('./../controllers/adminController');
 
@@ -6,7 +6,7 @@ const adminController = require('./../controllers/adminController');
 /**
  * Gestion page admin
  */
-router.get('/', function (req,res,next){
+routeur.get('/', function (req,res,next){
     adminController.checkId;
     res.send(/**page admin */);
 })
