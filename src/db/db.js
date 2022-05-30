@@ -16,14 +16,18 @@ const db = open({
  */
 const createDb = async (db) => {
 
-    //await db.exec(`CREATE TABLE IF NOT EXITS users`) //finir d'écrire les scripts sql
+    await db.exec(`CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	username NVARCHAR(25) UNIQUE NOT NULL,
+	email NVARCHAR(50) NOT NULL,
+	password TEXT NOT NULL)`);
+
+	await db.exec(`CREATE TABLE IF NOT EXISTS products (product_id INTEGER PRIMARY KEY AUTOINCREMENT,
+		product_name NVARCHAR(25) NOT NULL,
+		product_prize REAL NOT NULL,
+		sold INTEGER)`); //finir d'écrire les scripts sql
 
 };
 
-/** 
-async function createDb (db){
-	await.db.exec(`CREATE TABLE IF NOT EXITS users`) //finir d'écrire les scripts sql
-}*/
 
 
 module.exports = db;
