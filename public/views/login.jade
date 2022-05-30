@@ -17,13 +17,13 @@ block body
             h1 Bienvenue 
             p.lead Connectez vous :
             p 
-                form(name="login-form", method="post")
+                form(name="login-form", method="post",action="/login")
                     div.input
                         span.label Username 
-                        input(type='text', name='username')
+                        input(type='text', name='username', required)
                     .input 
                         span.label Password 
-                        input(type='password', name='password')
+                        input(type='password', name='password',required)
                     .actions 
                         input(type="submit", value="login")
 

@@ -16,16 +16,19 @@ block body
             h1 Bienvenue 
             p.lead Connectez vous :
             p 
-                form(name="register-form", method="post")
+                form(name="register-form", method="post", action="/register")
                     div.input
                         span.label Email 
-                        input(type='email', name='username')
+                        input(type='email', name='username',required)
                     div.input
                         span.label Username 
-                        input(type='text', name='username')
+                        input(type='text', name='username',required)
                     .input 
                         span.label Password 
-                        input(type='password', name='password')
+                        input(type='password', name='password',required)
+                    .input 
+                        span.label Redo Password 
+                        input(type='password', name='repPassword',required)
                     .actions 
                         input(type="submit", value="register")
 
