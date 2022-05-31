@@ -19,16 +19,16 @@ block body
                 form(name="register-form", method="post", action="/register")
                     div.input
                         span.label Email 
-                        input(type='email', name='username',required)
+                        input(type='email', name='Email',required, id='Email')
                     div.input
                         span.label Username 
-                        input(type='text', name='username',required)
+                        input(type='text', name='Username',id='Username',required)
                     .input 
                         span.label Password 
-                        input(type='password', name='password',required)
+                        input(type='password', name='Password',id='Password',required)
                     .input 
                         span.label Redo Password 
-                        input(type='password', name='repPassword',required)
+                        input(type='password', name='RepPassword',id='RepPassword',required)
                     .actions 
                         input(type="submit", value="register")
 
