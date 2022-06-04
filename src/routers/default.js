@@ -13,6 +13,8 @@ router.get('/home',controller.index);
 
 router.get('/register',controller.register);
 router.get('/login',controller.login);
+router.get('/checkout',controller.checkout);
+router.get('/payement',controller.payement);
 
 module.exports=router;
 
