@@ -5,7 +5,6 @@ const SALT_ROUNDS = 10;
 
 
 /**
- * 
  * @param {Promise<Database>} db 
  * @param {string} email 
  * @param {string} username 
