@@ -4,14 +4,35 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const multer = require('multer');
-
-
+const session = require('express-session');
+const {secret} = require('./config.json');
 
 
 const app = require('./bin/express')();
 //var router = require('./src/routers/default')();
 const routes = require('./src/routers/index');
 //require('./src/routers/default')(router);
+
+
+app.use(logger('dev'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(multer().array());
+app.use(
+	session({
+		secret,
+		resave: true,
+		saveUninitialized: true,
+		cookie: {
+			sameSite: 'strict',
+			secure: false,
+		},
+	})
+);
+
+
 
 app.use('/',routes);
 
