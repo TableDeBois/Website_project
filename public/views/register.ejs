@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <img src="../img/logo.png" alt="Logo">
+            <ul>
+                <li>
+                    <a href="home">Home</a>
+                </li>
+                <li>
+                    <a href="login">Login</a>
+                </li>
+                <li>
+                    <a href="register">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Bienvenue</h2>
+        <h4>Inscrivez-vous : </h4>
+
+        <form name="register-form" method="post" action="/register">
+            <span><label>Email</label></span>
+            <input type="email" name="Email" required id="Email">
+            <span><label>Username</label></span>
+            <input type="text" name="Username" id="Username" required>
+            <span><label>Password</label></span>
+            <input type="password" name="Password" id="Password" required>
+            <span><label>Confirm Password</label></span>
+            <input type="password" name="RepPassword" id="RepPassword" required>
+            <input type="submit" value="login">
+        </form>
+    </main>
 </body>
 </html>
