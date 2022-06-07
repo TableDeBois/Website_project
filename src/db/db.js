@@ -36,6 +36,4 @@ const createDb = async (db) => {
 
 };
 
-
-
 module.exports = db;

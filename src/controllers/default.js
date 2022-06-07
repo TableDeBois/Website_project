@@ -3,7 +3,14 @@
 
 module.exports.index = function(req,res){
     //req est la requete, res la reponse
-    res.render('index');
+    if(req.session.username === null ){
+        var val = "null";    
+    }
+    else{
+        var val = req.session.username;
+    }
+    //res.send('index',{username:val});
+    res.render('index',{username:val});
 };
 
 module.exports.login = function(req,res){

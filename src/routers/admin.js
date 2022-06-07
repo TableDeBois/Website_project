@@ -8,7 +8,7 @@ const adminController = require('./../controllers/adminController');
  */
 routeur.get('/', function (req,res,next){
     adminController.checkId;
-    res.send(/**page admin */);
+    res.send('admin');
 })
 
 

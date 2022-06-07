@@ -4,6 +4,8 @@ var express=require('express');
 
 var controller=require('./../controllers/default');
 
+var adminController=require('./../controllers/adminController')
+
 var router = require('./../../bin/express-router')();
 
 //var router = express.Router();
@@ -15,6 +17,7 @@ router.get('/register',controller.register);
 router.get('/login',controller.login);
 router.get('/checkout',controller.checkout);
 router.get('/payement',controller.payement);
+router.get('/admin',adminController.admin);
 
 module.exports=router;
 

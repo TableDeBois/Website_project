@@ -11,7 +11,13 @@ const registerRouter = require('./register');
 const routeur = express.Router();
 
 const getHomePage = function(req,res,next){
-    res.send('index');
+    if(req.session.username === null ){
+        var val = "null";    
+    }
+    else{
+        var val = req.session.username;
+    }
+    res.send('index',{username:val});
 }
 
 /**
@@ -22,6 +28,7 @@ router.get('/home',getHomePage);
 
 router.use('/login',loginRouter);
 router.use('/register',registerRouter);
+router.use('/admin',adminRouter);
 //router.use('/gestion',adminRouter);
 
 

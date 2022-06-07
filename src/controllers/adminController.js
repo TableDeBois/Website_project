@@ -12,11 +12,16 @@ async function getIdAdmin(){
     return Admin.ID_ADMIN(db);
 }
 
+admin = function(req,res){
+    res.render('admin');
+};
+
 /**
  * Insert other functions
  */
 
 module.exports = {
     checkId,
-    getIdAdmin
+    getIdAdmin,
+    admin
 };
