@@ -1,0 +1,29 @@
+<script>
+    function deleteProduct(productId){
+        //deleteProductFunction
+    }
+    function addProduct(productName,price){
+        //add product function
+    }
+</script>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Product id</th>
+            <th scope="col">Product name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Number sold</th>
+            <th scope="col">Delete ?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let i=0;i<users.length;i++) {%>
+            <tr>
+                <td><%= users[i]['id'] %></td>
+                <td><%= users[i]['Username'] %></td>
+                <td><%= users[i]['Email'] %></td>
+                <td><button onclick="deleteUser(users[i]['id'])">Supprimer</button></td>    
+            </tr>
+        <%}>
+    </tbody>
+</table>

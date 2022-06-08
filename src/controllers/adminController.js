@@ -13,8 +13,34 @@ async function getIdAdmin(){
 }
 
 admin = function(req,res){
+    req.sess
     res.render('admin');
 };
+
+
+async function getAllUsers(db){
+    //write
+};
+
+async function getAllProducts(db){
+    //write
+};
+
+async function getAllSales(db){
+    //write
+};
+
+async function createProduct(name,price,db){
+    //write
+};
+
+async function deleteProduct(id,db){
+    //write
+}
+
+async function deleteUser(id,db){
+    //write
+}
 
 /**
  * Insert other functions

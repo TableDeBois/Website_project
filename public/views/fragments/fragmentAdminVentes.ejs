@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Same id</th>
+            <th scope="col">Product sold</th>
+            <th scope="col">Buyer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let i=0;i<sales.length;i++) {%>
+            <tr>
+                <td><%= users[i]['id'] %></td>
+                <td><%= users[i]['product'] %></td>
+                <td><%= users[i]['buyer'] %></td> 
+            </tr>
+        <%}>
+    </tbody>
+</table>

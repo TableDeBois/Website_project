@@ -33,14 +33,32 @@
             <script>
                 function ventes(element){
                     //render des ventes
+                    document.getElementById("sales_section").style.display="none"
+                    document.getElementById("users_section").style.display="block"
+                    document.getElementById("products_section").style.display="block"
                 };
                 function produits(element){
                     //render des produits
+                    document.getElementById("sales_section").style.display="block"
+                    document.getElementById("users_section").style.display="block"
+                    document.getElementById("products_section").style.display="none"
                 };
                 function utilisateurs(element){
                     //render des utilisateurs
+                    document.getElementById("sales_section").style.display="block"
+                    document.getElementById("users_section").style.display="none"
+                    document.getElementById("products_section").style.display="block"
                 };
             </script>
+        </div>
+        <div id="sales_section">
+            <%- include('./fragments/fragmentAdminVentes') %>
+        </div>
+        <div id="users_section">
+            <%- include('./fragments/fragmentAdminUsers') %>
+        </div>
+        <div id="products_section">
+            <%- include('./fragments/fragmentAdminProducts') %>
         </div>
     </main>
     <footer>
