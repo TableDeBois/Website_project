@@ -17,13 +17,14 @@
         </tr>
     </thead>
     <tbody>
-        <% for (let i=0;i<users.length;i++) {%>
+        <% for (let i=0;i<products.length;i++) {%>
             <tr>
-                <td><%= users[i]['id'] %></td>
-                <td><%= users[i]['Username'] %></td>
-                <td><%= users[i]['Email'] %></td>
-                <td><button onclick="deleteUser(users[i]['id'])">Supprimer</button></td>    
+                <td><%= products[i]['id'] %></td>
+                <td><%= products[i]['name'] %></td>
+                <td><%= products[i]['price'] %></td>
+                <td><%= products[i]['number'] %></td>
+                <td><button onclick="deleteProduct(products[i]['id'])">Supprimer</button></td>    
             </tr>
-        <%}>
+        <%}; %>
     </tbody>
 </table>
