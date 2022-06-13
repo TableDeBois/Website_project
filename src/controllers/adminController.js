@@ -18,8 +18,8 @@ admin = function(req,res){
 };
 
 
-async function getAllUsers(db){
-    //write
+async function getAllUsers(){
+    Admin.getAllUsers(db);
 };
 
 async function getAllProducts(db){
@@ -30,15 +30,15 @@ async function getAllSales(db){
     //write
 };
 
-async function createProduct(name,price,db){
-    //write
+async function createProduct(name,price){
+    Admin.ajoutProduit(name,price,db);
 };
 
-async function deleteProduct(id,db){
+async function deleteProduct(id){
     //write
 }
 
-async function deleteUser(id,db){
+async function deleteUser(id){
     //write
 }
 
@@ -49,5 +49,6 @@ async function deleteUser(id,db){
 module.exports = {
     checkId,
     getIdAdmin,
-    admin
+    admin,
+    createProduct
 };
