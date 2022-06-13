@@ -1,5 +1,7 @@
 const db = require('../db/db');
 const Admin = require('../db/model/Admin');
+const AdminId = 10000; //Used to check admin, will be removed
+
 
 async function checkId(id){
     /**
@@ -22,12 +24,12 @@ async function getAllUsers(){
     Admin.getAllUsers(db);
 };
 
-async function getAllProducts(db){
-    //write
+async function getAllProducts(){
+    Admin.getAllProducts(db);
 };
 
-async function getAllSales(db){
-    //write
+async function getAllSales(){
+    Admin.getAllSales(db);
 };
 
 async function createProduct(name,price){
@@ -50,5 +52,8 @@ module.exports = {
     checkId,
     getIdAdmin,
     admin,
-    createProduct
+    createProduct,
+    getAllUsers,
+    getAllProducts,
+    getAllSales
 };
