@@ -9,9 +9,15 @@ module.exports.index = function(req,res){
     else{
         var val = req.session.username;
     }
-    //res.send('index',{username:val});
     res.render('index',{username:val});
 };
+
+module.exports.disconnect= function(req,res){
+
+    req.session.username = null;
+    this.index;
+
+}
 
 module.exports.login = function(req,res){
     res.render('login');

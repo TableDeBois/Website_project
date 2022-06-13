@@ -1,6 +1,5 @@
 const express = require('express');
 const router = require('./default');
-const homeRouteur = require('./home');
 const adminRouter = require('./admin');
 const loginRouter = require('./login');
 const registerRouter = require('./register');
@@ -20,11 +19,18 @@ const getHomePage = function(req,res,next){
     res.send('index',{username:val});
 }
 
+const disconnect= function(req,res,next){
+    req.session.username = null;
+    res.send('index');
+}
+
 /**
  * Get home page
  */
 router.get('/',getHomePage);
 router.get('/home',getHomePage);
+
+router.get('/disconnect',disconnect);
 
 router.use('/login',loginRouter);
 router.use('/register',registerRouter);

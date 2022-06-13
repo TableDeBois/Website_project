@@ -18,6 +18,7 @@ router.get('/login',controller.login);
 router.get('/checkout',controller.checkout);
 router.get('/payement',controller.payement);
 router.get('/admin',adminController.admin);
+router.get('/disconnect',controller.disconnect);
 
 module.exports=router;
 
