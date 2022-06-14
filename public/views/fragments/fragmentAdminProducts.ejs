@@ -3,12 +3,14 @@
         //deleteProductFunction
     }
     function addProduct(productName,price){
-        //add product function
+        //dispalay the add product form
+        if(document.getElementById("productForm").hidden){
+            document.getElementById("productForm").hidden = false;
+        } else {
+            document.getElementById("productForm").hidden = true;
+        }
     }
 </script>
-<div id="addProductButton">
-    <button onclick="addProduct('a',1)">Ajouter un produit</button>
-</div>
 <table>
     <thead>
         <tr>
@@ -39,3 +41,9 @@
         <% }; %> 
     </tbody>
 </table>
+<div id="addProductButton">
+    <button onclick="addProduct('a',1)">Ajouter un produit</button>
+</div>
+<div id="productForm" hidden="true">
+<%- include('./AdminAjoutProductsFragment') %> 
+</div>

@@ -35,7 +35,7 @@ router.get('/disconnect',disconnect);
 router.use('/login',loginRouter);
 router.use('/register',registerRouter);
 router.use('/admin',adminRouter);
-//router.use('/gestion',adminRouter);
+router.use('/addProduct',adminRouter);
 
 
 module.exports = router;
