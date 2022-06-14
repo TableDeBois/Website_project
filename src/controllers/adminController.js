@@ -6,6 +6,10 @@ async function checkId(id){
      * use ID & DB to check
      */
     return Admin.checkId(id,db)
+};
+
+async function getIdAdmin(){
+    return Admin.ID_ADMIN(db);
 }
 
 /**
@@ -13,5 +17,6 @@ async function checkId(id){
  */
 
 module.exports = {
-    checkId
+    checkId,
+    getIdAdmin
 };
