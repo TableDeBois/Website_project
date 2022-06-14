@@ -1,3 +1,4 @@
+const { resolve } = require('path');
 const db = require('../db/db');
 const Admin = require('../db/model/Admin');
 const AdminId = 10000; //Used to check admin, will be removed
@@ -14,22 +15,40 @@ async function getIdAdmin(){
     return Admin.ID_ADMIN(db);
 }
 
-admin = function(req,res){
-    req.sess
-    res.render('admin');
+admin =async function(req,res){
+    if(Admin.checkId){
+
+        //let controll = this;
+        //req est la requete, res la reponse
+        if(req.session.username === null ){
+            var val = "null";    
+        }
+        else{
+            var val = req.session.username;
+        }
+        var sales=await getAllSales();
+        var products=await getAllProducts();
+        var users=await getAllUsers();
+
+        res.render('admin',{Sales:sales,Products:products,Users:users,username:val});
+    }else{
+        res.send("<html><head><title>ERROR</title></head><body><h1>VOUS N'AVEZ RIEN A FAIRE ICI</h1></body></html>")
+    }
 };
 
 
 async function getAllUsers(){
-    Admin.getAllUsers(db);
+    var u = await Admin.getAllUsers(db);
+    console.log(u);
+    return u;
 };
 
 async function getAllProducts(){
-    Admin.getAllProducts(db);
+   return await Admin.getAllProducts(db);
 };
 
 async function getAllSales(){
-    Admin.getAllSales(db);
+    return await Admin.getAllSales(db);
 };
 
 async function createProduct(name,price){
@@ -37,11 +56,11 @@ async function createProduct(name,price){
 };
 
 async function deleteProduct(id){
-    //write
+    Admin.deleteProduct(db,id);
 }
 
 async function deleteUser(id){
-    //write
+    Admin.deleteUser(db,id);
 }
 
 /**
@@ -55,5 +74,7 @@ module.exports = {
     createProduct,
     getAllUsers,
     getAllProducts,
-    getAllSales
+    getAllSales,
+    deleteProduct,
+    deleteUser
 };

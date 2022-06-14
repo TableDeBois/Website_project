@@ -7,12 +7,16 @@
         </tr>
     </thead>
     <tbody>
-        <% for (let i=0;i<sales.length;i++) {%>
+        <% if(typeof(Sales)!== undefined || Sales !== null) { %> 
+        <% for (let i=0;i<Sales.length;i++) {%>
             <tr>
-                <td><%= users[i]['id'] %></td>
-                <td><%= users[i]['product'] %></td>
-                <td><%= users[i]['buyer'] %></td> 
+                <td><%= Sales[i]['sale_id'] %></td>
+                <td><%= Sales[i]['product_name'] %></td>
+                <td><%= Sales[i]['username'] %></td> 
             </tr>
         <%}; %>
+        <% } else { %>
+            <h3>Aucunes ventes trouvées</h3>
+        <% }; %>  
     </tbody>
 </table>

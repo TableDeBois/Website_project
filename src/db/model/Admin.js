@@ -1,6 +1,7 @@
 const { Database } = require('sqlite');
-const bcrypt = require('bcrypt');
-const SALT_ROUNDS = 10;
+//const bcrypt = require('bcrypt');
+const { resolve } = require('path');
+//const SALT_ROUNDS = 10;
 
 /**
  * 
@@ -39,10 +40,20 @@ const ajoutProduit = async (name,price,db) => {
  * 
  * @param {Promise<Database>} db 
  */
-const getAllUsers = async(db)=>{
-    return (await db).all("SELECT * FROM users",(err,row)=>{
-        console.log(row);  
-    });
+const getAllUsers = async(db)=>{   
+    const Users = (await db).all("SELECT * FROM users",(err,rows)=>{
+        if(err){
+            console.log("Error during query : ");
+            console.log(err);
+            reject(err);
+        }else{
+            console.log(rows);
+            resolve( rows); 
+        }
+        
+    }) || undefined;
+
+    return Users;
 };
 
 
@@ -51,24 +62,54 @@ const getAllUsers = async(db)=>{
  * @param {Promise<Database>} db 
  */
 const getAllProducts = async(db)=>{
-    return(await db).all("SELECT * FROM products",(err,row)=>{
-        console.log(row);
-    });
+    return((await db).all("SELECT * FROM products",(err,rows)=>{
+        if(err){
+            console.log("Error during query : ");
+            console.log(err);
+        }else{
+            console.log(rows);
+            resolve(rows);
+        }
+        
+    }));
 };
 
+/**
+ * 
+ * @param {Promise<Database>} db 
+ * @param {number} pId 
+ * @returns 
+ */
+const deleteProduct = async(db,pId)=>{
+    return(await db).run("DELETE FORM products WHERE product_id = ?",pId);
+};
+
+/**
+ * @param {Promise<Database>} db
+ * @param {number} username
+ */
+ const deleteUser = async (db, uId) => {
+	return (await db).run('DELETE FROM users WHERE user_id = ?', uId);
+};
 
 /**
  * 
  * @param {Promise<Database>} db 
  * @returns Sale={Id:sale_di,pName:product_name,uName:username}
  */
-const getAllSales = async(db)=>{
-    return(await db).get(`SELECT s.sale_id,p.product_name,u.username 
+const   getAllSales = async(db)=>{
+    return((await db).all(`SELECT s.sale_id,p.product_name,u.username 
     FROM sales AS s
     INNER JOIN products AS p ON p.product_id = s.product_id
-    INNER JOIN users AS u ON u.user_id = s.user_id`,(err,row)=>{
-        console.log(row);
-    });
+    INNER JOIN users AS u ON u.user_id = s.user_id`,(err,rows)=>{
+        if(err){
+            console.log("Error during query : ");
+            console.log(err);
+        }else{
+            console.log(rows);
+            resolve(rows);
+        }
+    }));
 };
 
 
@@ -78,5 +119,7 @@ module.exports = {
     ajoutProduit,
     getAllUsers,
     getAllProducts,
-    getAllSales
+    getAllSales,
+    deleteProduct,
+    deleteUser
 };

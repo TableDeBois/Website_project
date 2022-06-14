@@ -12,14 +12,18 @@
             <th scope="col">Delete ?</th>
         </tr>
     </thead>
-    <tbody>
-        <% for (let i=0;i<users.length;i++) {%>
+    <tbody> 
+        <% if(typeof(Users)!== undefined || Users !== null) { %>
+        <% for (let i=0;i<Users.length;i++) {%>
             <tr>
-                <td><%= users[i]['id'] %></td>
-                <td><%= users[i]['Username'] %></td>
-                <td><%= users[i]['Email'] %></td>
-                <td><button onclick="deleteUser(users[i]['id'])">Supprimer</button></td>    
+                <td><%= Users[i]['user_id'] %></td>
+                <td><%= Users[i]['username'] %></td>
+                <td><%= Users[i]['email'] %></td>
+                <td><button onclick="deleteUser(Users[i]['user_id'])">Supprimer</button></td>    
             </tr>
         <%}; %>
+        <% } else { %>
+            <h3>Aucuns utilisateurs trouvés</h3>
+        <% }; %> 
     </tbody>
 </table>

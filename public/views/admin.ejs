@@ -15,12 +15,18 @@
                 <li>
                     <a href="home">Home</a>
                 </li>
-                <li>
-                    <a href="login">Login</a>
-                </li>
-                <li>
-                    <a href="register">Register</a>
-                </li>
+                <% if(username==null){%>
+                    <li>
+                        <a href="login">Login</a>
+                    </li>
+                    <li>
+                        <a href="register">Register</a>
+                    </li>
+                    <%} else {%>
+                    <li>
+                        <a href="disconnect">Disconnect</a>
+                    </li>
+                <% } %>
             </ul>
         </nav>
     </header>
@@ -33,21 +39,21 @@
             <script>
                 function ventes(element){
                     //render des ventes
-                    document.getElementById("sales_section").style.display="none"
-                    document.getElementById("users_section").style.display="block"
-                    document.getElementById("products_section").style.display="block"
+                    document.getElementById("sales_section").style.display="block"
+                    document.getElementById("users_section").style.display="none"
+                    document.getElementById("products_section").style.display="none"
                 };
                 function produits(element){
                     //render des produits
-                    document.getElementById("sales_section").style.display="block"
-                    document.getElementById("users_section").style.display="block"
-                    document.getElementById("products_section").style.display="none"
+                    document.getElementById("sales_section").style.display="none"
+                    document.getElementById("users_section").style.display="none"
+                    document.getElementById("products_section").style.display="block"
                 };
                 function utilisateurs(element){
                     //render des utilisateurs
-                    document.getElementById("sales_section").style.display="block"
-                    document.getElementById("users_section").style.display="none"
-                    document.getElementById("products_section").style.display="block"
+                    document.getElementById("sales_section").style.display="none"
+                    document.getElementById("users_section").style.display="block"
+                    document.getElementById("products_section").style.display="none"
                 };
             </script>
         </div>
