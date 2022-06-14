@@ -14,8 +14,8 @@ module.exports.index = function(req,res){
 
 module.exports.disconnect= function(req,res){
 
-    req.session.username = null;
-    this.index;
+    val = null;
+    res.render('index',{username:val});
 
 }
 
