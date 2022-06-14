@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/default.css">
     <title>Index</title>
-    <script>
+    <!-- <script>
         function disconnect() {
             username = null;
             location.reload();
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <nav>
             <img src="../img/logo.png" alt="Logo">
             <ul>
@@ -41,17 +42,18 @@
                                 <% }; %>
             </ul>
         </nav>
-    </header>
-    <main>
-        <h1>Website Structure</h1>
-        <div>
-            <h1>Bienvenue</h1>
-            <p>Ici un site web</p>
-        </div>
-    </main>
-    <footer>
-        <p>© NoIndustry 2022</p>
-    </footer>
+    </header> -->
+    <%- include('header') %>
+        <main>
+            <h1>Website Structure</h1>
+            <div>
+                <h1>Bienvenue</h1>
+                <p>Ici un site web</p>
+            </div>
+        </main>
+        <footer>
+            <p>© NoIndustry 2022</p>
+        </footer>
 </body>
 
 </html>
