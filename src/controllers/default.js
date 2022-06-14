@@ -34,9 +34,3 @@ module.exports.checkout = function(req,res){
 module.exports.payement = function(req,res){
     res.render('payement');
 }
-
-/**
-module.exports.google = function(req,res){
-    res.redirect('google.com');
-}
-*/

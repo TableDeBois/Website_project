@@ -52,15 +52,15 @@ async function getAllSales(){
 };
 
 async function createProduct(name,price){
-    Admin.ajoutProduit(name,price,db);
+    return Admin.ajoutProduit(name,price,db);
 };
 
 async function deleteProduct(id){
-    Admin.deleteProduct(db,id);
+    return Admin.deleteProduct(db,id);
 }
 
 async function deleteUser(id){
-    Admin.deleteUser(db,id);
+    return Admin.deleteUser(db,id);
 }
 
 /**
