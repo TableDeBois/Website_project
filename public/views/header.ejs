@@ -11,12 +11,23 @@
                 <a href="home">
                     <li>Home</li>
                 </a>
+                <% if(username==null){%>
                 <a href="login">
                     <li>Login</li>
                 </a>
                 <a href="register">
                     <li>Register</li>
                 </a>
+                <%} else {%>
+                    <a href="disconnect">
+                        <li>Disconnect</li>
+                    </a>
+                    <% } %>
+                    <% if(username==="admin" ) {%>
+                    <a href="admin">
+                        <li>Administration</li>
+                    </a>
+                <% }; %>
             </ul>
         </div>
     </nav>
