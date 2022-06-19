@@ -8,8 +8,18 @@
     <title>Catalogue</title>
 </head>
 <body>
-    <nav>
-        <%- include('header') %>
-        </nav>
+    <%- include('header') %>
+    <main>
+        <div id="listProduits">
+            <% for (var p of Products) {%>
+                <div class="carteProduit">
+                    <img src="<%=p.product_img%>" alt="image">
+                    <p><%=p.product_name%></p>
+                    <p><%=p.product_prize%> €</p>
+                    <p><%=p.product_bio%></p>
+                </div>
+            <%}%>
+        </div>
+    </main>
 </body>
 </html>
