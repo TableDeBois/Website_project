@@ -20,6 +20,8 @@ router.get('/payement',controller.payement);
 router.get('/admin',adminController.admin);
 router.get('/disconnect',controller.disconnect);
 
+router.get('/catalogue', controller.catalogue);
+
 module.exports=router;
 
 /**Injection router d'express
