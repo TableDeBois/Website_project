@@ -15,8 +15,9 @@ routeur.post('/', function(req,res,next){
         if(loggedIn){
             req.session.username = username;
             return res.redirect('/home');
+        }else{
+            return res.send('<html><head><title>ERROR!</title></head><body><h1>WRONG USERNAME OR PASSWORD</h1</body></html>');
         }
-        return res.send('<html><head><title>ERROR!</title></head><body><h1>WRONG USERNAME OR PASSWORD</h1</body></html>');
     });
 
 });

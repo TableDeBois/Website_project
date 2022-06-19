@@ -11,7 +11,7 @@ routeur.get('/', function(req,res,next){
 
 routeur.post('/', function(req,res,next){
     let{Username:username, Email:email, Password:password, RepPassword:repPassword} = req.body;
-    
+
     if(!username || !email || !password || !repPassword){
         return res.send('<html><head><title>ERROR!</title></head><body><h1>A FIELD IS MISSING</h1</body></html>');
     }
