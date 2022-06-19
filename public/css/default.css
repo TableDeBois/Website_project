@@ -18,6 +18,11 @@ header img {
 
 } */
 
+p{
+    font-family: 'Unifont', monospace;
+    color: black;
+    padding: 1em;
+}
 a{
     text-decoration: none;
     color: black;
@@ -82,6 +87,10 @@ footer{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.taille_img{
+    width: 35%;
 }
 
 /* ------------------------------- BURGER MENU -------------------------------*/
