@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceuil</title>
-    <!-- <link rel="stylesheet" href="../css/default.css"> -->
-    <link rel="icon" href="../img/logo.png">
-    <title>Index</title>
     <link rel="stylesheet" href="../css/default.css">
+    <title>Index</title>
+    <!-- <script>
+        function disconnect() {
+            username = null;
+            location.reload();
+        }
+    </script> -->
 </head>
+
 <body>
+    <!-- <header>
+        <nav>
+            <img src="../img/logo.png" alt="Logo">
+            <ul>
+                <li>
+                    <a href="home">Home</a>
+                </li>
+                <% if(username==null){%>
+                    <li>
+                        <a href="login">Login</a>
+                    </li>
+                    <li>
+                        <a href="register">Register</a>
+                    </li>
+                    <%} else {%>
+                        <li>
+                            <a href="disconnect">Disconnect</a>
+                        </li>
+                        <% } %>
+                            <% if(username==="admin" ) {%>
+                                <li>
+                                    <a href="admin">Administration</a>
+                                </li>
+                                <% }; %>
+            </ul>
+        </nav>
+    </header> -->
     <%- include('header') %>
-    <main>
-        <article id="art_m1">
-            <h1 class="h1_">Le consulting autrement</h1>
-            <button id="button_JML">Je me lance</button>
-        </article>
-        <article class="container">
-            <img src="https://s1.qwant.com/thumbr/474x316/8/8/895648a2c12e393fdd913e8da62d6f1d1b0502b2565893b6504ad75b673170/th.jpg?u=https%3A%2F%2Ftse3.explicit.bing.net%2Fth%3Fid%3DOIP.0uVdHudN_qEQNc1bLC2HrAHaE8%26pid%3DApi&q=0&b=1&p=0&a=0" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia velit, nulla molestiae ullam animi aliquid sunt deserunt rem laborum omnis iste voluptates! Ad, voluptas molestiae saepe dolores adipisci similique nulla.</p>
-        </article>
-        <article class="container">
-            
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia velit, nulla molestiae ullam animi aliquid sunt deserunt rem laborum omnis iste voluptates! Ad, voluptas molestiae saepe dolores adipisci similique nulla.</p>
-            <img src="https://s1.qwant.com/thumbr/474x316/8/8/895648a2c12e393fdd913e8da62d6f1d1b0502b2565893b6504ad75b673170/th.jpg?u=https%3A%2F%2Ftse3.explicit.bing.net%2Fth%3Fid%3DOIP.0uVdHudN_qEQNc1bLC2HrAHaE8%26pid%3DApi&q=0&b=1&p=0&a=0" alt="">
-        </article>
-    </main>
-    <footer>
-        <p>© NoIndustry 2022</p>
-    </footer>
+        <main>
+            <h1>Website Structure</h1>
+            <div>
+                <h1>Bienvenue</h1>
+                <p>Ici un site web</p>
+            </div>
+        </main>
+        <footer>
+            <p>© NoIndustry 2022</p>
+        </footer>
 </body>
+
 </html>

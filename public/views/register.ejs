@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="../css/default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-<body>
-    <header>
-        <nav>
-            <img src="../img/logo.png" alt="Logo">
-            <ul>
-                <li>
-                    <a href="home">Home</a>
-                </li>
-                <li>
-                    <a href="login">Login</a>
-                </li>
-                <li>
-                    <a href="register">Register</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Bienvenue</h2>
-        <h4>Inscrivez-vous : </h4>
 
-        <form name="register-form" method="post" action="/register">
+<body>
+    <%- include('header') %>
+        <main class="bg_grey pb-5">
+            <article class="text-center">
+                <img src="../img/logo.png" alt="logo_inscription" class="size_logo_login">
+                <h1>Bienvenue</h1>
+                <p>Connectez-vous : </p>
+                <form name="register-form" method="post" action="/register"
+                    class="d-flex flex-wrap justify-content-center mx-auto flex-column m-3 align-content-center">
+
+                    <div class="form-floating m-3 w-25">
+                        <input type="email" name ="Email" class="form-control" id="Email" placeholder="*" required>
+                        <label for=" Email">Email</label>
+                    </div>
+
+                    <div class="form-floating m-3 w-25">
+                        <input type="text" name ="Username" class="form-control" id="Username" placeholder="*" required>
+                        <label for=" Username">Username</label>
+                    </div>
+                    <div class="form-floating m-3 w-25">
+                        <input type="password" name ="Password" class="form-control" id="Password" placeholder="*" required>
+                        <label for=" Password">Password</label>
+                    </div>
+                    <div class="form-floating m-3 w-25">
+                        <input type="password" name ="RepPassword" class="form-control" id="RepPassword" placeholder="*" required>
+                        <label for=" RepPassword">Confirm Password</label>
+                    </div>
+                    <input type="submit" value="login" class="btn btn-outline-dark text-center">
+                </form>
+            </article>
+
+
+            <!-- <form name="register-form" method="post" action="/register">
             <span><label>Email</label></span>
             <input type="email" name="Email" required id="Email">
             <span><label>Username</label></span>
@@ -37,7 +53,11 @@
             <span><label>Confirm Password</label></span>
             <input type="password" name="RepPassword" id="RepPassword" required>
             <input type="submit" value="login">
-        </form>
-    </main>
+        </form> -->
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
 </body>
+
 </html>
