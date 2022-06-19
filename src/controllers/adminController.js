@@ -2,22 +2,17 @@ const { resolve } = require('path');
 const db = require('../db/db');
 const Admin = require('../db/model/Admin');
 const AdminId = 10000; //Used to check admin, will be removed
+const userController = require('../controllers/userController');
 
 
-async function checkId(id){
-    /**
-     * use ID & DB to check
-     */
-    return Admin.checkId(id,db)
-};
-
-async function getIdAdmin(){
-    return Admin.ID_ADMIN(db);
+async function verifIsAdmin(username){
+    return Admin.verifAdmin(db,username)
 }
 
-admin =async function(req,res){
-    if(Admin.checkId){
 
+admin =async function(req,res){
+    var isAdmin = await verifIsAdmin(req.session.username)
+    if(isAdmin ){
         //let controll = this;
         //req est la requete, res la reponse
         if(req.session.username === null ){
@@ -76,5 +71,5 @@ module.exports = {
     getAllProducts,
     getAllSales,
     deleteProduct,
-    deleteUser
+    deleteUser,
 };

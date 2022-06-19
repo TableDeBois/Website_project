@@ -7,8 +7,12 @@ const adminController = require('./../controllers/adminController');
  * Gestion page admin
  */
 routeur.get('/', function (req,res,next){
-    adminController.checkId;
-    res.send('admin');
+    if(adminController.adminVerif){
+        res.send('admin');    
+    }else{
+        res.send("<html><head><title>ERROR</title></head><body><h1>VOUS N'AVEZ RIEN A FAIRE ICI</h1></body></html>")
+    }
+    //res.send('admin');
 })
 
 routeur.post('/',function(req,res,next){

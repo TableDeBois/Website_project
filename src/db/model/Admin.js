@@ -5,23 +5,18 @@ const { resolve } = require('path');
 
 /**
  * 
- * @param {Promise<Database>} db 
- * @returns 
+ * @param {Promise<Database>} db
+ * @param {string} name
+ *
  */
-const ID_ADMIN = async(db) =>{
-    return(
-        (await db).run('SELECT user_id FROM users WHERE username=admin')
-    );
-};
+const verifAdmin = async(db,name) => {
+    var {user_id:user}=
+    (await (await db).get('SELECT user_id FROM users WHERE username = ?', name) || -1);
+    var {user_id:adminId} =
+    (await(await db).get("SELECT user_id FROM users WHERE username='admin'") || -2);
 
-/**
- * 
- * @param {number} id 
- * @returns 
- */
-const checkId = async(id)=>{
-    return ID_ADMIN===id;
-};
+    return user===adminId;
+}
 
 
 /**
@@ -123,5 +118,5 @@ module.exports = {
     getAllProducts,
     getAllSales,
     deleteProduct,
-    deleteUser
+    deleteUser,verifAdmin
 };
