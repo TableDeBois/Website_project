@@ -4,7 +4,7 @@
 module.exports.index = function(req,res){
     //req est la requete, res la reponse
     if(req.session.username === null ){
-        var val = "null";    
+        var val = null;    
     }
     else{
         var val = req.session.username;
@@ -23,7 +23,7 @@ module.exports.disconnect= function(req,res){
 module.exports.login = function(req,res){
     //req est la requete, res la reponse
     if(req.session.username === null ){
-        var val = "null";    
+        var val = null;    
     }
     else{
         var val = req.session.username;
@@ -34,7 +34,7 @@ module.exports.login = function(req,res){
 module.exports.register = function(req,res){
     //req est la requete, res la reponse
     if(req.session.username === null ){
-        var val = "null";    
+        var val = null;    
     }
     else{
         var val = req.session.username;
@@ -45,7 +45,7 @@ module.exports.register = function(req,res){
 module.exports.checkout = function(req,res){
     //req est la requete, res la reponse
     if(req.session.username === null ){
-        var val = "null";    
+        var val = null;    
     }
     else{
         var val = req.session.username;
@@ -56,7 +56,7 @@ module.exports.checkout = function(req,res){
 module.exports.payement = function(req,res){
     //req est la requete, res la reponse
     if(req.session.username === null ){
-        var val = "null";    
+        var val = null;    
     }
     else{
         var val = req.session.username;
@@ -66,7 +66,7 @@ module.exports.payement = function(req,res){
 
 module.exports.catalogue = function(req,res){
     if(req.session.username === null ){
-        var val = "null";    
+        var val = null;    
     }
     else{
         var val = req.session.username;
