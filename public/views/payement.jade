@@ -1,0 +1,39 @@
+//public/views/payement.jade
+extends layout 
+block body 
+    section.container
+        header.header.clearfix
+            nav
+                ul.nav.nav-pills.pull-right
+                    li.active 
+                        a(href="home") Accueil
+                    li.active 
+                        a(href="login") Login 
+                        p or 
+                        a(href="register") Register
+            
+            h3.text-muted Begin payement page
+        div.jumbotron 
+            h3.lead Procédez au payement :
+            p 
+                form(name="pay-form", method="post",action="https://www.sandbox.paypal.com/cgi-bin/webscr",id="form-payment",novalidate)
+                    .input 
+                        input(name="cmd",value="_cart", type="hidden")
+                        input(type="hidden",name="upload",value="1")
+                        input(type="hidden",name="no_note",value="0")
+                        input(type="hidden",name="bn",value="XY_BuyNowWPS_CC")
+                        input(type="hidden",name="tax_cart",value="0")
+                        input(type="hidden",name="rm",value="2")
+                        input(type="hidden",name="business",value="an@exemple.email")
+                        input(type="hidden",name="handling_cart",value="0")
+                        input(type="hidden",name="currency_code",value="USD")
+                        input(type="hidden",name="lc",value="US")
+                        input(type="hidden",name="return",value="/home")
+                        input(type="hidden",name="cbt",value="Return to shop")
+                        input(type="hidden",name="cancel_return",value="/checkout")
+                        <!--Put products choose here + price -->
+                    .input 
+                        input(type="submit", value="Place order",class="btn")
+
+        footer.footer 
+            p © NoIndustry 2022
