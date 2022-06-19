@@ -5,12 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Acceuil</title>
-    <!-- <link rel="stylesheet" href="../css/default.css"> -->
-    <link rel="icon" href="../img/logo.png">
-    <title>Index</title>
-
     <link rel="stylesheet" href="../css/default.css">
     <title>Index</title>
     <!-- <script>
@@ -42,6 +36,46 @@
         <p>© NoIndustry 2022</p>
     </footer>
 
+=======
+    <!-- <header>
+        <nav>
+            <img src="../img/logo.png" alt="Logo">
+            <ul>
+                <li>
+                    <a href="home">Home</a>
+                </li>
+                <% if(username==null){%>
+                    <li>
+                        <a href="login">Login</a>
+                    </li>
+                    <li>
+                        <a href="register">Register</a>
+                    </li>
+                    <%} else {%>
+                        <li>
+                            <a href="disconnect">Disconnect</a>
+                        </li>
+                        <% } %>
+                            <% if(username==="admin" ) {%>
+                                <li>
+                                    <a href="admin">Administration</a>
+                                </li>
+                                <% }; %>
+            </ul>
+        </nav>
+    </header> -->
+    <%- include('header') %>
+        <main>
+            <h1>Website Structure</h1>
+            <div>
+                <h1>Bienvenue</h1>
+                <p>Ici un site web</p>
+            </div>
+        </main>
+        <footer>
+            <p>© NoIndustry 2022</p>
+        </footer>
+>>>>>>> parent of f515eb8... Merge pull request #3 from TableDeBois/front
 </body>
 
 </html>
