@@ -1,0 +1,31 @@
+//public/views/login.jade
+extends layout 
+block body
+    section.container
+        header.header.clearfix
+            nav
+                ul.nav.nav-pills.pull-right
+                    li.active 
+                        a(href="home") Accueil
+                    li.active 
+                        a(href="login") Login 
+                        p or 
+                        a(href="register") Register
+            
+            h3.text-muted Website Structure
+        div.jumbotron
+            h1 Bienvenue 
+            p.lead Connectez vous :
+            p 
+                form(name="login-form", method="post",action="/login")
+                    div.input
+                        span.label Username 
+                        input(type='text', name='username', required)
+                    .input 
+                        span.label Password 
+                        input(type='password', name='password',required)
+                    .actions 
+                        input(type="submit", value="login")
+
+        footer.footer 
+            p © NoIndustry 2022

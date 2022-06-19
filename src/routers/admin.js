@@ -8,22 +8,8 @@ const adminController = require('./../controllers/adminController');
  */
 routeur.get('/', function (req,res,next){
     adminController.checkId;
-    res.send('admin');
+    res.send(/**page admin */);
 })
 
-routeur.post('/',function(req,res,next){
-
-    let{Pname:productName, Pprice:productPrice} = req.body;
-
-    if(!productName || !productName){
-        res.send("<html><head><title>Error</title></head><body><h1>Champs non renseignés</h1></body></html>")
-    }
-
-    adminController.createProduct(productName,productPrice).then((result) =>{
-        console.log(result.changes.toString());
-        res.redirect('/admin');
-    })
-
-})
 
 module.exports = routeur;
