@@ -1,19 +1,14 @@
-header {
-    display: flex;
+
+nav img {
+    width: 300px;
+    height: 200px;
+    margin-right: 33%;
+
 }
 
 header img {
     width: 250px;
 }
-
-/* nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: rgb(233, 233, 233);
-
-} */
-
 .size_logo_login {
     width: 170px;
 }
@@ -169,4 +164,5 @@ nav {
  */
 #menuToggle input:checked~ul {
     transform: none;
+
 }
