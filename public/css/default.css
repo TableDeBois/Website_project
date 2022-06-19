@@ -1,3 +1,6 @@
+main{
+    color: black;
+}
 header{
     display: flex;
 }
@@ -20,7 +23,6 @@ header img {
 
 p{
     font-family: 'Unifont', monospace;
-    color: black;
     padding: 1em;
 }
 a{
@@ -236,4 +238,29 @@ nav {
  */
 #menuToggle input:checked~ul {
     transform: none;
+}
+
+/* CATALOGUE */
+
+div img{
+    width: 80%;
+}
+
+.carteProduit{
+    border: 2px black;
+    border-radius: 10px;
+    width: 30%;
+    margin-top: 2%;
+    text-align: center;
+    padding: 2%;
+    background-color:rgb(117,103,117);
+    color: white;
+}
+
+
+#listProduits{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    
 }
