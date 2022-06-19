@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../css/default.css">
+</head>
+<body>
+    <!--<header>
+        <nav>
+            <img src="../img/logo.png" alt="Logo">
+            <ul>
+                <li>
+                    <a href="home">Home</a>
+                </li>
+                <% if(username==null){%>
+                    <li>
+                        <a href="login">Login</a>
+                    </li>
+                    <li>
+                        <a href="register">Register</a>
+                    </li>
+                    <%} else {%>
+                    <li>
+                        <a href="disconnect">Disconnect</a>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>-->
+    <%- include('header') %>
+    <main>
+        <h1>Administration des produits, des utilisateurs et des ventes</h1>
+        <div>
+            <button id="sales" onclick="ventes(this)">Ventes</button>
+            <button id="products" onclick="produits(this)">Produits</button>
+            <button id="users" onclick="utilisateurs(this)">Utilisateurs</button>
+            <script>
+                function ventes(element){
+                    //render des ventes
+                    document.getElementById("sales_section").style.display="block"
+                    document.getElementById("users_section").style.display="none"
+                    document.getElementById("products_section").style.display="none"
+                };
+                function produits(element){
+                    //render des produits
+                    document.getElementById("sales_section").style.display="none"
+                    document.getElementById("users_section").style.display="none"
+                    document.getElementById("products_section").style.display="block"
+                };
+                function utilisateurs(element){
+                    //render des utilisateurs
+                    document.getElementById("sales_section").style.display="none"
+                    document.getElementById("users_section").style.display="block"
+                    document.getElementById("products_section").style.display="none"
+                };
+            </script>
+        </div>
+        <div id="sales_section">
+            <%- include('./fragments/fragmentAdminVentes') %>
+        </div>
+        <div id="users_section">
+            <%- include('./fragments/fragmentAdminUsers') %>
+        </div>
+        <div id="products_section">
+            <%- include('./fragments/fragmentAdminProducts') %>
+        </div>
+    </main>
+    <footer>
+        <p>© NoIndustry 2022</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Sale id</th>
+            <th scope="col">Product sold</th>
+            <th scope="col">Buyer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if(typeof(Sales)!== undefined || Sales !== null) { %> 
+        <% for (let i=0;i<Sales.length;i++) {%>
+            <tr>
+                <td><%= Sales[i]['sale_id'] %></td>
+                <td><%= Sales[i]['product_name'] %></td>
+                <td><%= Sales[i]['username'] %></td> 
+            </tr>
+        <%}; %>
+        <% } else { %>
+            <h3>Aucunes ventes trouvées</h3>
+        <% }; %>  
+    </tbody>
+</table>
