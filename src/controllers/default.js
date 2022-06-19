@@ -63,3 +63,13 @@ module.exports.payement = function(req,res){
     }
     res.render('payement',{username:val});
 }
+
+module.exports.catalogue = function(req,res){
+    if(req.session.username === null ){
+        var val = "null";    
+    }
+    else{
+        var val = req.session.username;
+    }
+    res.render('catalogue',{username:val});
+}
