@@ -51,8 +51,8 @@ async function getAllSales(){
     return await Admin.getAllSales(db);
 };
 
-async function createProduct(name,price){
-    return Admin.ajoutProduit(name,price,db);
+async function createProduct(name,price,bio,url){
+    return Admin.ajoutProduit(name,price,bio,url,db);
 };
 
 async function deleteProduct(id){

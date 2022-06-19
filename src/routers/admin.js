@@ -13,13 +13,13 @@ routeur.get('/', function (req,res,next){
 
 routeur.post('/',function(req,res,next){
 
-    let{Pname:productName, Pprice:productPrice} = req.body;
+    let{Pname:productName, Pprice:productPrice, Pbio:productBio, Purl:productUrl} = req.body;
 
     if(!productName || !productName){
         res.send("<html><head><title>Error</title></head><body><h1>Champs non renseignés</h1></body></html>")
     }
 
-    adminController.createProduct(productName,productPrice).then((result) =>{
+    adminController.createProduct(productName,productPrice,productBio,productUrl).then((result) =>{
         console.log(result.changes.toString());
         res.redirect('/admin');
     })

@@ -24,7 +24,9 @@ const createDb = async (db) => {
 	await db.exec(`CREATE TABLE IF NOT EXISTS products (product_id INTEGER PRIMARY KEY AUTOINCREMENT,
 		product_name NVARCHAR(25) NOT NULL,
 		product_prize REAL NOT NULL,
-		sold INTEGER)`); //finir d'écrire les scripts sql
+		sold INTEGER,
+		product_bio TEXT,
+		product_img TEXT)`); //finir d'écrire les scripts sql
 
 	await db.exec(`CREATE TABLE IF NOT EXISTS sales (sale_id INTEGER PRIMARY KEY AUTOINCREMENT,
 		product_id INTEGER NOT NULL,
