@@ -111,8 +111,6 @@ const   getAllSales = async(db)=>{
 
 
 module.exports = {
-    checkId,
-    ID_ADMIN,
     ajoutProduit,
     getAllUsers,
     getAllProducts,

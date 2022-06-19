@@ -2,7 +2,6 @@ const { resolve } = require('path');
 const db = require('../db/db');
 const Admin = require('../db/model/Admin');
 const AdminId = 10000; //Used to check admin, will be removed
-const userController = require('../controllers/userController');
 
 
 async function verifIsAdmin(username){
@@ -31,6 +30,16 @@ admin =async function(req,res){
     }
 };
 
+catalogue = async function(req,res){
+    if(req.session.username === null ){
+        var val = "null";    
+    }
+    else{
+        var val = req.session.username;
+    }
+    var products=await getAllProducts();
+    res.render('catalogue',{Products:products,username:val});
+};
 
 async function getAllUsers(){
     var u = await Admin.getAllUsers(db);
@@ -63,9 +72,8 @@ async function deleteUser(id){
  */
 
 module.exports = {
-    checkId,
-    getIdAdmin,
     admin,
+    catalogue,
     createProduct,
     getAllUsers,
     getAllProducts,

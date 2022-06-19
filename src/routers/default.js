@@ -20,7 +20,7 @@ router.get('/payement',controller.payement);
 router.get('/admin',adminController.admin);
 router.get('/disconnect',controller.disconnect);
 
-router.get('/catalogue', controller.catalogue);
+router.get('/catalogue', adminController.catalogue);
 
 module.exports=router;
 
