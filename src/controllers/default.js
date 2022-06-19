@@ -20,11 +20,23 @@ module.exports.disconnect= function(req,res){
 }
 
 module.exports.login = function(req,res){
-    res.render('login');
+    if(req.session.username === null ){
+        var val = "null";    
+    }
+    else{
+        var val = req.session.username;
+    }
+    res.render('login',{username:val});
 };
 
 module.exports.register = function(req,res){
-    res.render('register');
+    if(req.session.username === null ){
+        var val = "null";    
+    }
+    else{
+        var val = req.session.username;
+    }
+    res.render('register',{username:val});
 };
 
 module.exports.checkout = function(req,res){
