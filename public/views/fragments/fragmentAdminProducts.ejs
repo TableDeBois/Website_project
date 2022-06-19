@@ -18,6 +18,8 @@
             <th scope="col">Product name</th>
             <th scope="col">Price</th>
             <th scope="col">Number sold</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image URL</th>
             <th scope="col">Delete ?</th>
         </tr>
     </thead>
@@ -33,6 +35,8 @@
                 <%} else { %>
                 <td>0</td>
                 <% } %> 
+                <td><%= Products[i]['product_bio'] %></td>
+                <td><%= Products[i]['product_img'] %></td>
                 <td><button onclick="deleteProduct(Products[i]['id'])">Supprimer</button></td>    
             </tr>
         <%}; %>

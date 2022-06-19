@@ -30,10 +30,12 @@ const checkId = async(id)=>{
  * @param {Number} price 
  * @param {Promise<Database>} db 
  */
-const ajoutProduit = async (name,price,db) => {
-    return (await db).run("INSERT INTO products (product_name, product_prize) VALUES (?,?)",
+const ajoutProduit = async (name,price,bio,url,db) => {
+    return (await db).run("INSERT INTO products (product_name, product_prize,product_bio,product_img) VALUES (?,?,?,?)",
     name,
-    price);
+    price,
+    bio,
+    url);
 };
 
 /**
