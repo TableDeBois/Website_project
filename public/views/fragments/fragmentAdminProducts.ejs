@@ -1,0 +1,49 @@
+<script>
+    function deleteProduct(productId){
+        //deleteProductFunction
+    }
+    function addProduct(productName,price){
+        //dispalay the add product form
+        if(document.getElementById("productForm").hidden){
+            document.getElementById("productForm").hidden = false;
+        } else {
+            document.getElementById("productForm").hidden = true;
+        }
+    }
+</script>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Product id</th>
+            <th scope="col">Product name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Number sold</th>
+            <th scope="col">Delete ?</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <% if(typeof(Products)!== undefined || Products !== null) { %>
+        <% for (let i=0;i<Products.length;i++) {%>
+            <tr>
+                <td><%= Products[i]['product_id'] %></td>
+                <td><%= Products[i]['product_name'] %></td>
+                <td><%= Products[i]['product_prize'] %></td>
+                <% if(typeof(Products[i]['sold']) !== undefined || Products[i]['sold']!==null){ %>
+                <td><%= Products[i]['sold'] %></td>
+                <%} else { %>
+                <td>0</td>
+                <% } %> 
+                <td><button onclick="deleteProduct(Products[i]['id'])">Supprimer</button></td>    
+            </tr>
+        <%}; %>
+        <% } else { %>
+            <h3>Aucuns produits trouvés</h3>
+        <% }; %> 
+    </tbody>
+</table>
+<div id="addProductButton">
+    <button onclick="addProduct('a',1)">Ajouter un produit</button>
+</div>
+<div id="productForm" hidden="true">
+<%- include('./AdminAjoutProductsFragment') %> 
+</div>
