@@ -29,13 +29,4 @@ routeur.post('/',function(req,res,next){
     })
 
 });
-
-routeur.post('/del_user',(req,res)=>{
-    let{id:user_id} = req.body;
-    adminController.deleteUser(user_id).then((result)=>{
-        res.redirect('/admin');
-    })
-});
-
-
 module.exports = routeur;
