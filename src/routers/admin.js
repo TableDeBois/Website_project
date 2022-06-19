@@ -13,7 +13,7 @@ routeur.get('/', function (req,res,next){
         res.send("<html><head><title>ERROR</title></head><body><h1>VOUS N'AVEZ RIEN A FAIRE ICI</h1></body></html>")
     }
     //res.send('admin');
-})
+});
 
 routeur.post('/',function(req,res,next){
 
@@ -28,6 +28,14 @@ routeur.post('/',function(req,res,next){
         res.redirect('/admin');
     })
 
-})
+});
+
+routeur.post('/del_user',(req,res)=>{
+    let{id:user_id} = req.body;
+    adminController.deleteUser(user_id).then((result)=>{
+        res.redirect('/admin');
+    })
+});
+
 
 module.exports = routeur;

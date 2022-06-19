@@ -1,9 +1,6 @@
 <script>
-    function deleteProduct(productId){
-        //deleteProductFunction
-    }
     function addProduct(productName,price){
-        //dispalay the add product form
+        //display the add product form
         if(document.getElementById("productForm").hidden){
             document.getElementById("productForm").hidden = false;
         } else {
@@ -37,7 +34,10 @@
                 <% } %> 
                 <td><%= Products[i]['product_bio'] %></td>
                 <td><%= Products[i]['product_img'] %></td>
-                <td><button onclick="deleteProduct(Products[i]['id'])">Supprimer</button></td>    
+                <form method="post" action="/del_product">
+                    <input type="text" name="Pid" value="<%= Products[i]['product_id'] %>" hidden="true">
+                    <td><!--<button onclick="helper.deleteProduct(Products[i]['id'])">Supprimer</button>--><button type="submit">Supprimer</button></td>    
+                </form>
             </tr>
         <%}; %>
         <% } else { %>

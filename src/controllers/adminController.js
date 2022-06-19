@@ -9,6 +9,7 @@ async function verifIsAdmin(username){
 }
 
 
+
 admin =async function(req,res){
     var isAdmin = await verifIsAdmin(req.session.username)
     if(isAdmin ){

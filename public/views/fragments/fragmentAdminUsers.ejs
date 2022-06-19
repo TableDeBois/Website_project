@@ -1,8 +1,3 @@
-<script>
-    function deleteUser(userId){
-        //deleteUser
-    }
-</script>
 <table>
     <thead>
         <tr>
@@ -19,7 +14,12 @@
                 <td><%= Users[i]['user_id'] %></td>
                 <td><%= Users[i]['username'] %></td>
                 <td><%= Users[i]['email'] %></td>
-                <td><button onclick="deleteUser(Users[i]['user_id'])">Supprimer</button></td>    
+                <% if(Users[i]['username'] !== 'admin') {%>
+                <form method="post" action="/del_user">
+                    <input type="text" name="id" value="<%= Users[i]['user_id'] %>" hidden="true">
+                    <td><!--<button onclick="helper.deleteUser(Users[i]['user_id'])">Supprimer</button>--><button type="submit">Supprimer</button></td>
+                </form>
+                <% } %>
             </tr>
         <%}; %>
         <% } else { %>

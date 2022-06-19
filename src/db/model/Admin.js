@@ -78,7 +78,7 @@ const getAllProducts = async(db)=>{
  * @returns 
  */
 const deleteProduct = async(db,pId)=>{
-    return(await db).run("DELETE FORM products WHERE product_id = ?",pId);
+    return(await db).run("DELETE FROM products WHERE product_id = ?",pId);
 };
 
 /**

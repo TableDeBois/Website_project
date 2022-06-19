@@ -22,6 +22,23 @@ router.get('/disconnect',controller.disconnect);
 
 router.get('/catalogue', adminController.catalogue);
 
+router.post('/del_user',(req,res)=>{
+    let{id:user_id} = req.body;
+    adminController.deleteUser(user_id).then((result)=>{
+        console.log(result);
+        res.redirect('/admin');
+    })
+});
+
+router.post('/del_product',(req,res)=>{
+    let{Pid:product_id} = req.body;
+    adminController.deleteProduct(product_id).then((result)=>{
+        console.log(result);
+        res.redirect('/admin');
+    })
+});
+
+
 module.exports=router;
 
 /**Injection router d'express
