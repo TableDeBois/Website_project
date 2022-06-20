@@ -1,6 +1,5 @@
 //bin/express.js
 var express = require('express');
-const favicon = require('express-favicon');
 
 module.exports = function(){
     var app = express();
@@ -12,8 +11,6 @@ module.exports = function(){
     //Alias
     //const bodyParser = require("body-parser");
     //app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true}))
-
-    app.use(favicon("./../public/img/logo.png"));
 
     //app.use("/", require("./controllers/default"));
     app.use('/css',express.static('./public/css'));
