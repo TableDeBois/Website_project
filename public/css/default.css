@@ -71,6 +71,12 @@ footer{
     background-color: rgb(243, 242, 242);
 }
 
+#shopping-img{
+    width: 60px;
+    height: 60px;
+    margin-left: 69%;
+}
+
 .size_logo_login {
     width: 170px;
 }
