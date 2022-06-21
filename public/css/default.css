@@ -82,6 +82,7 @@ li{
     background-image: url("https://wallpaperaccess.com/full/2655965.jpg");
     background-size: cover;
     color: white;
+    padding-top: 10%;
 }
 /*
 .h1_{
@@ -97,6 +98,7 @@ li{
     border-radius: 15px;
     border: 1px solid white;
     color: white;
+    padding: 10px;
 }
 .container{
     margin: 0 1.5em;
