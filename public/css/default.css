@@ -5,6 +5,43 @@ header{
     display: flex;
 }
 
+
+
+/* ANIMATION LE CONSULTING AUTREMENT */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .h1 {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .waviy {
+    position: relative;
+  }
+  .waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    animation: flip 2s 1;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
+
+
 header img {
     width: 270px;
     height: 170px;
@@ -46,11 +83,14 @@ li{
     background-size: cover;
     color: white;
 }
+/*
 .h1_{
     text-transform: uppercase;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-top: 10%;
 }
+
+*/
 #button_JML{
     padding: 1em;
     text-transform: uppercase;
@@ -70,7 +110,6 @@ li{
 footer{
     background-color: rgb(243, 242, 242);
 }
-
 #shopping-img{
     width: 60px;
     height: 60px;
