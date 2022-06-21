@@ -45,18 +45,7 @@ header{
 header img {
     width: 270px;
     height: 170px;
-    /* margin-right: 33%; */
-  /*   position: relative;
-    top: -110px; */
 }
-
-/* nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: rgb(233, 233, 233);
-
-} */
 
 p{
     font-family: 'Unifont', monospace;
@@ -84,14 +73,8 @@ li{
     color: white;
     padding-top: 10%;
 }
-/*
-.h1_{
-    text-transform: uppercase;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding-top: 10%;
-}
 
-*/
+
 #button_JML{
     padding: 1em;
     text-transform: uppercase;
@@ -136,6 +119,8 @@ footer{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0
 }
 
 .taille_img{
