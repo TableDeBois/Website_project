@@ -32,7 +32,7 @@ header{
     font-size: 40px;
     color: #fff;
     text-transform: uppercase;
-    animation: flip 2s 1;
+    animation: flip 3s 5;
     animation-delay: calc(.2s * var(--i))
   }
   @keyframes flip {
