@@ -1,26 +1,54 @@
+main{
+    color: black;
+}
 header{
     display: flex;
 }
 
+
+
+/* ANIMATION LE CONSULTING AUTREMENT */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .h1 {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .waviy {
+    position: relative;
+  }
+  .waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    animation: flip 3s 5;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
+
+
 header img {
     width: 270px;
     height: 170px;
-    /* margin-right: 33%; */
-  /*   position: relative;
-    top: -110px; */
 }
-
-/* nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: rgb(233, 233, 233);
-
-} */
 
 p{
     font-family: 'Unifont', monospace;
-    color: black;
     padding: 1em;
 }
 a{
@@ -43,18 +71,17 @@ li{
     background-image: url("https://wallpaperaccess.com/full/2655965.jpg");
     background-size: cover;
     color: white;
-}
-.h1_{
-    text-transform: uppercase;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     padding-top: 10%;
 }
+
+
 #button_JML{
     padding: 1em;
     text-transform: uppercase;
     border-radius: 15px;
     border: 1px solid white;
     color: white;
+    padding: 10px;
 }
 .container{
     margin: 0 1.5em;
@@ -67,6 +94,11 @@ li{
 }
 footer{
     background-color: rgb(243, 242, 242);
+}
+#shopping-img{
+    width: 60px;
+    height: 60px;
+    margin-left: 69%;
 }
 
 .size_logo_login {
@@ -87,6 +119,8 @@ footer{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0
 }
 
 .taille_img{
@@ -236,4 +270,29 @@ nav {
  */
 #menuToggle input:checked~ul {
     transform: none;
+}
+
+/* CATALOGUE */
+
+div img{
+    width: 80%;
+}
+
+.carteProduit{
+    border: 2px black;
+    border-radius: 10px;
+    width: 30%;
+    margin-top: 2%;
+    text-align: center;
+    padding: 2%;
+    background-color:rgb(117,103,117);
+    color: white;
+}
+
+
+#listProduits{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    
 }
